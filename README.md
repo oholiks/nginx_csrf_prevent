@@ -1,3 +1,8 @@
+## Warning!
+This coredumps on first reload, needs a restart. Consecutive reloads work.
+This module now blocks requests that doesn't have either of the two Referer or Origin header set.
+Advice is to only use this module for non-GET requests.
+
 ## Prevent CSRF with nginx
 
 This is a simple nginx module which compares either the referer or the origin header to the host header. If the domain name doesn't match, HTTP response 403 is returned. This action takes place before the request is processed and will terminate any additional processing. If the request lacks both a referer and a origin header, no action will be taken.
