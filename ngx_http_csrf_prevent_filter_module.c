@@ -156,7 +156,7 @@ ngx_http_csrf_prevent_header_filter(ngx_http_request_t *r)
         //risk to block server2server calls with no headers set
         //makes this usuable only for browser calls
         //firefox does not set origin on an illegal call, chrome sets it to null
-        str = (u_char*) '1';
+        str = (u_char*) "block";
     }
 
     if (str)
