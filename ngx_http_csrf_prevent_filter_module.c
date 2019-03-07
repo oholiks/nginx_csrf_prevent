@@ -184,7 +184,7 @@ ngx_http_csrf_prevent_header_filter(ngx_http_request_t *r)
         if (ngx_strcmp(new, host) != 0)
         {
             ngx_free(new);
-            ngx_log_error(NGX_LOG_ERR, r->connection->log, 0, "**possible CSRF attempt**");
+            ngx_log_error(NGX_LOG_ERR, r->connection->log, 0, "**possible CSRF attempt** (%s)", str);
             return NGX_HTTP_FORBIDDEN;
         }
         ngx_free(new);
